@@ -25,3 +25,21 @@ s_FiringFunctionData.Ammo.numberOfMagazines = 2.0
    print("changed FiringFunctionData of Apc's Reload")
 end)
 
+
+Local s_PGUID_ApcsSplash = Guid("35DA1164-EAA9-4622-8D5A-704FF73DD295")
+Local s_IGUID_ApcsSplash = Guid("37947774-F524-41E7-9207-DA3CDD0D2FFE")
+
+ResourceManager:RegisterInstanceLoadHandler(s_PGUID_ApcsSplash, s_IGUID_ApcsSplash, function(p_loadedInstance)
+  Local s_VeniceExplosionEntityData = VeniceExplosionEntityData(p_LoadedInstance)
+  s_VeniceExplosionEntityData:MakeWritable()
+
+s_VeniceExplosionEntityData.innerBlastRadius = 20.0
+s_VeniceExplosionEntityData.blastDamage = 99.9
+s_VeniceExplosionEntityData.blastRadius = 20.0
+s_VeniceExplosionEntityData.shockwaveDamage = 50.00
+s_VeniceExplosionEntityData.shockwaveRadius = 20.0
+s_VeniceExplosionEntityData.shockwaveImpulse = 100.0
+s_VeniceExplosionEntityData.shockwaveTime = 1.00
+   print("changed VeniceExplosionEntityData of Apc's Splash")
+end)
+
